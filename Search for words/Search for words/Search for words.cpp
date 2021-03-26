@@ -20,12 +20,12 @@ public:
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    int f;
+    int amount;
     std::string word;
     std::ifstream ifs("pg11.txt");
 
     std::cout << "Введите чисто слов которое хотите найти: ";
-    std::cin >> f;
+    std::cin >> amount;
 
     if (ifs.is_open())
     {
@@ -41,7 +41,7 @@ int main()
 
         std::sort(vector.begin(), vector.end(), descending_pair_value_comparer<std::string, int>());
 
-        for (std::vector<std::pair<std::string, int>>::size_type i = 0; i < f; i++)
+        for (std::vector<std::pair<std::string, int>>::size_type i = 0; i < amount; i++)
         {
             std::cout << vector[i].second << ": " << vector[i].first << std::endl;
         }
